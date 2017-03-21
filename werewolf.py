@@ -49,7 +49,10 @@ Y = np.transpose(Y)
 #print(X)
 #print(Y)
 
-surf = ax.plot_surface(X, Y, out, cmap=cm.coolwarm)
+surf = ax.plot_surface(X, Y, out, cmap=cm.jet)
+ax.set_xlabel("Number of humans")
+ax.set_ylabel("Number of werewolves")
+ax.set_zlabel("Probability of human victory")
 #wire = ax.plot_wireframe(X,Y, out)
 
 plt.show() 
