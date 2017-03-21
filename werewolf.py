@@ -22,11 +22,11 @@ def play_werewolf(n_human, n_werewolf):
 
 
 # Sampling of werewolf games:
-humans_max = 15
-humans_min = 4
-werewolves_max = 5
+humans_max = 10 +1
+humans_min = 1
+werewolves_max = 10 +1
 werewolves_min = 1
-samples = 1000
+samples = 10000
 out = np.zeros((humans_max - humans_min, werewolves_max - werewolves_min))
 out2 = np.zeros((samples))
 
@@ -49,10 +49,10 @@ Y = np.transpose(Y)
 #print(X)
 #print(Y)
 
-surf = ax.plot_surface(X, Y, out, cmap=cm.jet)
+#surf = ax.plot_surface(X, Y, out, cmap=cm.jet)
+wire = ax.plot_wireframe(X,Y, out)
 ax.set_xlabel("Number of humans")
 ax.set_ylabel("Number of werewolves")
 ax.set_zlabel("Probability of human victory")
-#wire = ax.plot_wireframe(X,Y, out)
 
 plt.show() 
